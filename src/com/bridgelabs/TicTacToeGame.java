@@ -9,12 +9,13 @@ package com.bridgelabs;
 import java.util.Scanner;
 
 public class TicTacToeGame {
+	static char[] board;
 	static char player_letter;
 	static char computer_letter;
 
 	/* *purpose: Function to create a empty board */
 	public static void createEmptyBoard() {
-		char[] board = new char[10];
+		board = new char[10];
 		for (int a = 1; a < board.length; a++) {
 			board[a] = '-';
 		}
@@ -33,6 +34,17 @@ public class TicTacToeGame {
 		return player_letter;
 	}
 
+	/* *purpose: Function to display the empty tic tac toe board. */
+	public static void showBoard() {
+		System.out.println("=============");
+		System.out.println("| " + board[1] + " | " + board[2] + " | " + board[3] + " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + board[4] + " | " + board[5] + " | " + board[6] + " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + board[7] + " | " + board[8] + " | " + board[9] + " |");
+		System.out.println("=============");
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to tic tac toe game ");
 		createEmptyBoard();
@@ -43,6 +55,7 @@ public class TicTacToeGame {
 		char chosen_letter = sc.next().charAt(0);
 
 		chooseLetter(chosen_letter);
+		showBoard();
 		sc.close();
 
 	}
