@@ -8,12 +8,11 @@ package com.bridgelabs;
 
 public class TicTacToeGame {
 
-	// Method to create a empty tic tac toe board
+	/* *purpose: Function to create a empty board */
 	public static void createEmptyBoard() {
 		char[] board = new char[10];
-		for (int a = 0; a < 9; a++) {
-			board[a] = (char) (a+1);
-			System.out.println(" "+ board[a]);
+		for (int a = 1; a < board.length ; a++) {
+			board[a] = '-';
 		}
 	}
 
